@@ -16,7 +16,7 @@ var BeerView = Backbone.View.extend({
 
   render: function () {
     this.$el.html(this.template(this.model.toJSON()));
-
+    this.$el.find('.edit-mode').css('display', 'none');
     return this;
   },
 
@@ -24,12 +24,10 @@ var BeerView = Backbone.View.extend({
     if (e.which === 13) {
       var inputName = this.$el.find('.edit-mode').val();
       this.model.set('name', inputName);
-      this.$el.find('.edit-mode').css('display', 'none');
-
     }
   },
 
-  editBeer(e) {
+  editBeer() {
     this.$el.find('.edit-mode').css('display', 'block');
   },
 
