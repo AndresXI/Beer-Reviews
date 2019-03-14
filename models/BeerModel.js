@@ -6,4 +6,8 @@ var BeerModel = Backbone.Model.extend({
     image_url: ''
   },
 
+  setBeerName: function (beerName) {
+    this.set('name', beerName);
+  }
+
 });

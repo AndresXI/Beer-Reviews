@@ -22,7 +22,7 @@ var BeerView = Backbone.View.extend({
   createOnEnter: function (e) {
     if (e.key === 'Enter') {
       var inputName = this.$el.find('.edit-mode').val();
-      this.model.set('name', inputName);
+      this.model.setBeerName(inputName);
     }
   },
 
