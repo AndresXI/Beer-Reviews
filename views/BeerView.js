@@ -16,12 +16,11 @@ var BeerView = Backbone.View.extend({
 
   render: function () {
     this.$el.html(this.template(this.model.toJSON()));
-    this.$el.find('.edit-mode').css('display', 'none');
     return this;
   },
 
   createOnEnter: function (e) {
-    if (e.which === 13) {
+    if (e.key === 'Enter') {
       var inputName = this.$el.find('.edit-mode').val();
       this.model.set('name', inputName);
     }
